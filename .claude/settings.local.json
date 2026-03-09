@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "composio"
+  ],
+  "enableAllProjectMcpServers": true
+}

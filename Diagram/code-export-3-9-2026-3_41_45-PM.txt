@@ -1,0 +1,52 @@
+// 1. Frontend UI
+Frontend UI (Client Side) [icon: monitor, color: cyan] {
+  Telemetry Upload
+  Web Audio API [icon: activity, color: fuchsia]
+  Narrative Engine [icon: terminal, color: cyan]
+}
+
+// 2. Backend Gateway
+Backend Gateway (Server Side) [icon: server, color: blue] {
+  FastAPI Central Hub
+  asyncio.gather
+}
+
+// 3. The Brain
+The Brain (Google Cloud) [icon: cloud, color: white] {
+  Gemini 3.1 Pro Agent [icon: bot, color: blue]
+}
+
+// 4. Media Fork
+PROD Environment (Enterprise) [icon: check-circle, color: gray] {
+  Google Veo (Video)
+  Lyria API (Audio)
+  Vertex TTS (Voice)
+}
+
+DEMO Environment (Graceful Fallback) [icon: zap, color: cyan] {
+  Local Asset Mock
+  Web Speech API
+}
+
+// Connections & Data Flow
+Telemetry Upload > FastAPI Central Hub: POST Image
+FastAPI Central Hub > Gemini 3.1 Pro Agent: Multi-modal Request
+Gemini 3.1 Pro Agent > asyncio.gather: Returns JSON DirectorPlan
+
+asyncio.gather > Google Veo (Video): PROD Branch
+asyncio.gather > Lyria API (Audio): PROD Branch
+asyncio.gather > Vertex TTS (Voice): PROD Branch
+
+asyncio.gather > Local Asset Mock: DEMO Branch
+asyncio.gather > Web Speech API: DEMO Branch
+
+Local Asset Mock > Web Audio API: Millisecond Sync
+Local Asset Mock > Narrative Engine: Trigger Event
+
+// Add Notes
+Acoustic Mapping [icon: info, color: fuchsia] {
+  High Freq = Oxygen
+  Low Freq = Shockwaves
+}
+
+Web Audio API > Acoustic Mapping
